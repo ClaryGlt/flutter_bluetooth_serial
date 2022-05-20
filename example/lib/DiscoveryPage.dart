@@ -104,10 +104,7 @@ class _DiscoveryPage extends State<DiscoveryPage> {
           return BluetoothDeviceListEntry(
             device: device,
             rssi: result.rssi,
-            onTap: () {
-              Navigator.of(context).pop(result.device);
-            },
-            onLongPress: () async {
+            onTap: ()  async {
               try {
                 bool bonded = false;
                 if (device.isBonded) {
@@ -146,7 +143,7 @@ class _DiscoveryPage extends State<DiscoveryPage> {
                           child: new Text("Close"),
                           onPressed: () {
                             Navigator.of(context).pop();
-                          },
+                            },
                         ),
                       ],
                     );
